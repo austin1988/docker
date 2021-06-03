@@ -1,0 +1,9 @@
+version: '2'
+services:
+    blueocean:
+        image: jenkinsci/blueocean
+        container_name: blueocean-jenkins-container
+        ports:
+            - "5001:5000"
+            - "9092:8080"
+        user: root

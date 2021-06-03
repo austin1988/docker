@@ -1,0 +1,14 @@
+version: '2'
+services:
+    jenkins:
+        image: custom_jenkins:1.0
+        container_name: jenkins-cppcheck-container
+        restart: unless-stopped
+        ports:
+            - "5002:5000"
+            - "9092:8080"
+        volumes:
+            - "/etc/timezone:/etc/timezone"
+            - "/etc/localtime:/etc/localtime"
+            - "/data/docker_jenkins_home/cppcheck_projects:/var/jenkins_home"
+        user: jenkins

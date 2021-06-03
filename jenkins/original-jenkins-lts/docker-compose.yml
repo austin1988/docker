@@ -1,0 +1,11 @@
+version: '2'
+services:
+    jenkins:
+        image: jenkins/jenkins:lts
+        container_name: jenkins-container
+        ports:
+            - "5000:5000"
+            - "9090:8080"
+        volumes:
+            - "/data/docker_jenkins_home/jenkins:/var/jenkins_home"
+        user: root
