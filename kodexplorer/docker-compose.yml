@@ -1,0 +1,10 @@
+version: '2'
+services:
+    kodexplorer:
+        image: yangxuan8282/kodexplorer
+        container_name: kodexplorer
+        restart: "always"
+        ports:
+            - "9090:80"
+        volumes:
+            - "./KodExplorer:/opt/kodexplorer-data/"
