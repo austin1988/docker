@@ -1,0 +1,20 @@
+version: '2'
+services:
+  ubuntu18.04-baota:
+    image: baota-ubuntu18.04:1.2
+    container_name: baota-container-wangzy
+    restart: unless-stopped
+    volumes:
+      - "/etc/timezone:/etc/timezone"
+      - "/etc/localtime:/etc/localtime"
+      - "./workspace:/home/wangzy/workspace"
+    ports:
+      - "8888:8888"
+    cap_add:
+      - SYS_ADMIN
+    security_opt:
+      - apparmor:unconfined
+    user: root
+    stdin_open: true
+    tty: true
+

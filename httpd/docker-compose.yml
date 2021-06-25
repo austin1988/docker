@@ -1,0 +1,10 @@
+version: '2'
+services:
+  httpd:
+    image: httpd:2.4.48-alpine
+    container_name: httpd-container
+    ports:
+      - "19999:80"
+    user: root
+    tty: true
+

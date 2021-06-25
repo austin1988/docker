@@ -1,0 +1,21 @@
+version: '2'
+services:
+  fastadmin:
+    build: .
+    image: karsonzhang/fastadmin
+    container_name: fastadmin-container
+    restart: unless-stopped
+    volumes:
+      - "/etc/timezone:/etc/timezone"
+      - "/etc/localtime:/etc/localtime"
+      - "./workspace:/home/wangzy/workspace"
+    ports:
+      - "29999:80"
+    cap_add:
+      - ALL
+    security_opt:
+      - apparmor:unconfined
+    user: root
+    stdin_open: true
+    tty: true
+

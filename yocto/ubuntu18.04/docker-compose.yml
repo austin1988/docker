@@ -1,0 +1,20 @@
+version: '2'
+services:
+  ubuntu18.04-yocto-wangzy:
+    build: .
+    image: ubuntu18.04-yocto-wangzy
+    container_name: ubuntu18.04-container-wangzy
+    restart: unless-stopped
+    volumes:
+      - "./workspace:/home/wangzy/workspace"
+      - "/data/docker_oecore-x86_64:/usr/local/oecore-x86_64"
+    command:
+      - /bin/bash
+    cap_add:
+      - SYS_ADMIN
+    security_opt:
+      - apparmor:unconfined
+    user: root
+    stdin_open: true
+    tty: true
+

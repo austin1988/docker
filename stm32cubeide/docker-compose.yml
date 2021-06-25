@@ -1,0 +1,13 @@
+version: '2'
+services:
+    jenkins:
+        image: jenkins_jenkins
+        container_name: stm32cubeide
+        ports:
+            - "5003:5000"
+            - "9093:8080"
+        volumes:
+            - "/etc/timezone:/etc/timezone"
+            - "/etc/localtime:/etc/localtime"
+            - "/data/docker_jenkins_home/cubeide_projects:/var/jenkins_home"
+        user: root

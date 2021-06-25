@@ -1,0 +1,10 @@
+version: '2'
+services:
+    showdoc:
+        image: star7th/showdoc
+        container_name: showdoc
+        restart: unless-stopped
+        ports:
+            - "8181:80"
+        user: root
+

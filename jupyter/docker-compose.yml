@@ -1,0 +1,13 @@
+version: '2'
+
+services:
+    jupyter-notebook:
+        image: jupyter/scipy-notebook:latest
+        container_name: jupyter-notebook
+        ports:
+            - "8888:8888"
+        volumes:
+            - "/etc/timezone:/etc/timezone"
+            - "/etc/localtime:/etc/localtime"
+        user: root
+

@@ -1,7 +1,7 @@
 version: '2'
 services:
     jenkins:
-        image: custom_jenkins:1.0
+        image: scratch_jenkins:latest
         container_name: jenkins-build-container
         restart: unless-stopped
         ports:

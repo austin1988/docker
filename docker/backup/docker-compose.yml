@@ -1,0 +1,9 @@
+version: '2'
+
+services:
+    docker:
+        image: docker:latest
+        container_name: docker-in-docker 
+        entrypoint: /usr/local/bin/docker-entrypoint.sh
+        user: root
+

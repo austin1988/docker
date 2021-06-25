@@ -1,0 +1,20 @@
+version: '2'
+services:
+  ubuntu18.04-wangzy:
+    build: .
+    image: ubuntu18.04-wangzy
+    container_name: gcc5.2.1-container-wangzy
+    restart: unless-stopped
+    volumes:
+      - "/etc/timezone:/etc/timezone"
+      - "/etc/localtime:/etc/localtime"
+      - "./workspace:/home/wangzy/workspace"
+      - "/data/docker_oecore-x86_64:/usr/local/oecore-x86_64"
+    cap_add:
+      - SYS_ADMIN
+    security_opt:
+      - apparmor:unconfined
+    user: wangzy
+    stdin_open: true
+    tty: true
+

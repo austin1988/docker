@@ -1,0 +1,7 @@
+# below use docker-compose.yml file instead, also failed
+#docker run -itd -p 29999:80 --privileged=true --name=fastadmin-container karsonzhang/fastadmin /usr/sbin/init
+
+# another git repo https://gitee.com/karson/fastadmin.git
+
+# below failed
+#docker run -itd -p 29999:80 --privileged=true --name=fastadmin-container yuxingchao/fastadmin:1.1 /usr/sbin/init

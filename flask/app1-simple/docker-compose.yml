@@ -1,0 +1,18 @@
+version: '2'
+
+services:
+    nginx:
+        image: scratch_flask:latest
+        container_name: flask
+        ports:
+            - "9080:80"
+            - "5004:5000"
+        volumes:
+            - "/etc/timezone:/etc/timezone"
+            - "/etc/localtime:/etc/localtime"
+            - "./default.conf:/etc/nginx/conf.d/default.conf"
+            - "./30-start-gunicorn.sh:/docker-entrypoint.d/30-start-gunicorn.sh"
+            - "./myweb.py:/opt/myweb.py"
+            - "./index.html:/usr/share/nginx/html/index.html"
+        user: root
+

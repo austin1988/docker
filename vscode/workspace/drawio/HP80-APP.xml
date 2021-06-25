@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="10.10.1.101" modified="2021-04-13T01:04:23.997Z" agent="5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.190 Safari/537.36" etag="99c4V_Kpbr7dnFh3iGeL" version="13.8.2" type="browser">
+  <diagram id="9FHaU1Eow1FsHf6-iFbT" name="Page-1">
+    <mxGraphModel dx="1473" dy="-216" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="RIyKXKKF0CpiVodGyk8b-1" value="MC_DomainObject" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;rounded=0;fillColor=#D5E8D4;" parent="1" vertex="1">
+          <mxGeometry x="475" y="1160" width="180" height="200" as="geometry">
+            <mxRectangle x="80" y="300" width="90" height="26" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="RIyKXKKF0CpiVodGyk8b-2" value="# mReferCount: UINT32&#xa;# mSem: HANDLE" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="RIyKXKKF0CpiVodGyk8b-1" vertex="1">
+          <mxGeometry y="26" width="180" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="RIyKXKKF0CpiVodGyk8b-3" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="RIyKXKKF0CpiVodGyk8b-1" vertex="1">
+          <mxGeometry y="70" width="180" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="RIyKXKKF0CpiVodGyk8b-4" value="+ GetSem(): void&#xa;+ ReleaseSem(): void&#xa;+ Open(INT32): INT32&#xa;+ Close(): INT32&#xa;+ Read(void *, UINT32): INT32&#xa;+ Write(void *, UINT32): INT32&#xa;+ IoCtrl(INT32, void *, UINT32, &#xa;             void *, UINT32): INT32" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontStyle=0" parent="RIyKXKKF0CpiVodGyk8b-1" vertex="1">
+          <mxGeometry y="78" width="180" height="122" as="geometry" />
+        </mxCell>
+        <mxCell id="RIyKXKKF0CpiVodGyk8b-5" value="" style="html=1;verticalAlign=bottom;endArrow=none;endSize=8;strokeColor=#ff0000;endFill=0;startArrow=block;startFill=0;entryX=0.75;entryY=0;entryDx=0;entryDy=0;" parent="1" source="RIyKXKKF0CpiVodGyk8b-4" target="RIyKXKKF0CpiVodGyk8b-6" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="495" y="1465" as="targetPoint" />
+            <mxPoint x="559" y="1410" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="RIyKXKKF0CpiVodGyk8b-6" value="MCCentralStationApp" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;rounded=0;fillColor=#D5E8D4;" parent="1" vertex="1">
+          <mxGeometry x="305" y="1470" width="180" height="170" as="geometry">
+            <mxRectangle x="-90" y="610" width="90" height="26" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="RIyKXKKF0CpiVodGyk8b-7" value="- m_WireNetChannel: MC_StationWireNetChannel" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="RIyKXKKF0CpiVodGyk8b-6" vertex="1">
+          <mxGeometry y="26" width="180" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="RIyKXKKF0CpiVodGyk8b-8" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="RIyKXKKF0CpiVodGyk8b-6" vertex="1">
+          <mxGeometry y="50" width="180" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="RIyKXKKF0CpiVodGyk8b-9" value="+ Open(INT32): INT32&#xa;+ Close(): INT32&#xa;+ Read(void *, UINT32): INT32&#xa;+ Write(void *, UINT32): INT32&#xa;+ IoCtrl(INT32, void *, UINT32, &#xa;             void *, UINT32): INT32&#xa;+ SetUartIndex(UCHAR): " style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontStyle=2" parent="RIyKXKKF0CpiVodGyk8b-6" vertex="1">
+          <mxGeometry y="58" width="180" height="112" as="geometry" />
+        </mxCell>
+        <mxCell id="RIyKXKKF0CpiVodGyk8b-10" value="MC_Devcie_Node" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;rounded=0;fillColor=#D5E8D4;" parent="1" vertex="1">
+          <mxGeometry x="635" y="1470" width="180" height="100" as="geometry">
+            <mxRectangle x="240" y="610" width="90" height="26" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="RIyKXKKF0CpiVodGyk8b-11" value="+ Device_Name: CHAR[]&#xa;+ Device_Ptr: MCDevice *&#xa;+ List: MC_LIST_HEAD" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="RIyKXKKF0CpiVodGyk8b-10" vertex="1">
+          <mxGeometry y="26" width="180" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="RIyKXKKF0CpiVodGyk8b-12" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="RIyKXKKF0CpiVodGyk8b-10" vertex="1">
+          <mxGeometry y="80" width="180" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="RIyKXKKF0CpiVodGyk8b-13" value=" " style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontStyle=0" parent="RIyKXKKF0CpiVodGyk8b-10" vertex="1">
+          <mxGeometry y="88" width="180" height="12" as="geometry" />
+        </mxCell>
+        <mxCell id="RIyKXKKF0CpiVodGyk8b-14" value="" style="endArrow=diamondThin;endFill=1;endSize=24;html=1;startArrow=block;startFill=1;exitX=0.755;exitY=1.01;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="RIyKXKKF0CpiVodGyk8b-4" target="RIyKXKKF0CpiVodGyk8b-10" edge="1">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="735" y="1400" as="sourcePoint" />
+            <mxPoint x="895" y="1400" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="RIyKXKKF0CpiVodGyk8b-15" value="MC_StationWireNetChannel" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;rounded=0;fillColor=#D5E8D4;" parent="1" vertex="1">
+          <mxGeometry x="165" y="1170" width="230" height="200" as="geometry">
+            <mxRectangle x="-230" y="310" width="90" height="26" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="RIyKXKKF0CpiVodGyk8b-16" value="- m_netFd:  INT32&#xa;- m_bInited: BOOL&#xa;- m_bConfigFailue: BOOL" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="RIyKXKKF0CpiVodGyk8b-15" vertex="1">
+          <mxGeometry y="26" width="230" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="RIyKXKKF0CpiVodGyk8b-17" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="RIyKXKKF0CpiVodGyk8b-15" vertex="1">
+          <mxGeometry y="80" width="230" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="RIyKXKKF0CpiVodGyk8b-18" value="+ InitChannel(): VOID&#xa;+ DataProcess(): VOID&#xa;+ OnConnectCentralStation(INT32): VOID&#xa;- InitNetCfg(): VOID&#xa;- PushData(): VOID&#xa;- PushWorkstationInfos(): VOID" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontStyle=0" parent="RIyKXKKF0CpiVodGyk8b-15" vertex="1">
+          <mxGeometry y="88" width="230" height="112" as="geometry" />
+        </mxCell>
+        <mxCell id="RIyKXKKF0CpiVodGyk8b-19" value="MC_StationBaseChannel" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;rounded=0;fillColor=#D5E8D4;" parent="1" vertex="1">
+          <mxGeometry x="160" y="890" width="230" height="150" as="geometry">
+            <mxRectangle x="160" y="890" width="90" height="26" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="RIyKXKKF0CpiVodGyk8b-20" value="# MAX_NET_BUF_LEN=300:  UINT32" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="RIyKXKKF0CpiVodGyk8b-19" vertex="1">
+          <mxGeometry y="26" width="230" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="RIyKXKKF0CpiVodGyk8b-21" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="RIyKXKKF0CpiVodGyk8b-19" vertex="1">
+          <mxGeometry y="50" width="230" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="RIyKXKKF0CpiVodGyk8b-22" value="+ InitChannel(): VOID&#xa;+ DataProcess(): VOID&#xa;+ OnOneSecond(): VOID&#xa;+ OnConnectCentralStation(INT32): VOID&#xa;- PackageDataSendToICIS(): VOID&#xa;- ParseNetDataAndAct(): VOID" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontStyle=2" parent="RIyKXKKF0CpiVodGyk8b-19" vertex="1">
+          <mxGeometry y="58" width="230" height="92" as="geometry" />
+        </mxCell>
+        <mxCell id="RIyKXKKF0CpiVodGyk8b-23" value="" style="html=1;verticalAlign=bottom;endArrow=none;endSize=8;strokeColor=#ff0000;endFill=0;startArrow=block;startFill=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.527;exitY=1.013;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="RIyKXKKF0CpiVodGyk8b-22" target="RIyKXKKF0CpiVodGyk8b-15" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-75" y="1170" as="targetPoint" />
+            <mxPoint x="-36.403508771929864" y="1060.0000000000002" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="RIyKXKKF0CpiVodGyk8b-24" value="" style="endArrow=diamondThin;endFill=1;endSize=24;html=1;startArrow=block;startFill=1;exitX=0.47;exitY=1.025;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;" parent="1" source="RIyKXKKF0CpiVodGyk8b-18" target="RIyKXKKF0CpiVodGyk8b-6" edge="1">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="275.0000000000001" y="1410" as="sourcePoint" />
+            <mxPoint x="389.1" y="1518.78" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="RIyKXKKF0CpiVodGyk8b-25" value="设备VFS结构，定义于&lt;br&gt;hp80-driver\Source\Ecapsualtion\MC_DeviceFS.cpp" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="825" y="1470" width="280" height="34" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

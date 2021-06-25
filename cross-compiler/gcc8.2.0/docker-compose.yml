@@ -1,0 +1,22 @@
+version: '2'
+services:
+  ubuntu18.04-wangzy:
+    build: .
+    image: ubuntu18.04-wangzy
+    container_name: gcc8.2.0-container-wangzy
+    restart: unless-stopped
+    volumes:
+      - "/etc/timezone:/etc/timezone"
+      - "/etc/localtime:/etc/localtime"
+      - "./workspace:/home/wangzy/workspace"
+      - "/data/arm-gcc-8.2.0:/data/arm-gcc-8.2.0"
+    command:
+      - /bin/bash
+    cap_add:
+      - SYS_ADMIN
+    security_opt:
+      - apparmor:unconfined
+    user: wangzy
+    stdin_open: true
+    tty: true
+

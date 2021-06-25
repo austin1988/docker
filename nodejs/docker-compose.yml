@@ -1,0 +1,17 @@
+version: '2'
+
+services:
+    node:
+        image: node:latest
+        container_name: nodejs-container
+        ports:
+            - "19099:80"
+            - "15009:5000"
+        volumes:
+            - "/etc/timezone:/etc/timezone"
+            - "/etc/localtime:/etc/localtime"
+        command: 
+            - /bin/bash
+        tty: true
+        user: root
+

@@ -1,0 +1,9 @@
+version: '2'
+services:
+  ubuntu14.04:
+    build: .
+    image: ubuntu14-yocto
+    container_name: ubuntu14-container-wangzy
+    user: root
+    tty: true
+

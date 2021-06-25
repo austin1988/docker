@@ -1,0 +1,13 @@
+version: '2'
+
+services:
+    portainer:
+        image: portainer/portainer-ce
+        container_name: portainer-container
+        ports:
+            - "9101:9000"
+        volumes:
+            - "/etc/timezone:/etc/timezone"
+            - "/etc/localtime:/etc/localtime"
+            - "/var/run/docker.sock:/var/run/docker.sock"
+

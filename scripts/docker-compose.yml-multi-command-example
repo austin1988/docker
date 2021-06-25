@@ -1,0 +1,22 @@
+version: '2'
+services:
+  kernel-compiler:
+    image: ubuntu18.04:1.0
+    container_name: developer-environment-wangzy
+    volumes:
+      - "/data/arm-gcc-8.2.0:/data/arm-gcc-8.2.0"
+    command: 
+      - /bin/bash
+      - -c
+      - |
+      - /usr/sbin/groupadd -g 1003 software
+      - /usr/sbin/useradd -u 1002 -g software -m -d /home/wangzy --shell /bin/bash -p wangzy wangzy
+    entrypoint: ["tail", "-f", "/dev/null"]
+    cap_add:
+      - SYS_ADMIN
+    security_opt:
+      - apparmor:unconfined
+    user: root
+    stdin_open: true
+    tty: true
+

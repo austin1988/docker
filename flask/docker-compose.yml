@@ -1,0 +1,17 @@
+version: '2'
+
+services:
+    nginx:
+        image: scratch_flask:latest
+        container_name: flask
+        restart: unless-stopped
+        ports:
+            - "80:80"
+        volumes:
+            - "/etc/timezone:/etc/timezone"
+            - "/etc/localtime:/etc/localtime"
+            - "./default.conf:/etc/nginx/conf.d/default.conf"
+            - "./entrypoint.d/30-start-gunicorn.sh:/docker-entrypoint.d/30-start-gunicorn.sh"
+            - "./static:/opt"
+        user: root
+

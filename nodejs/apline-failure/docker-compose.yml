@@ -1,0 +1,14 @@
+version: '2'
+
+services:
+    node:
+        build: .
+        container_name: nodejs
+        ports:
+            - "9090:80"
+            - "5005:5000"
+        volumes:
+            - "/etc/timezone:/etc/timezone"
+            - "/etc/localtime:/etc/localtime"
+        user: root
+

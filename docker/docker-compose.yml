@@ -1,0 +1,10 @@
+version: '2'
+
+services:
+    docker:
+        image: mreimbold/ubuntu1804-dind:latest
+        container_name: docker
+        volumes:
+            - "/var/run/docker.sock:/var/run/docker.sock"
+        user: root
+

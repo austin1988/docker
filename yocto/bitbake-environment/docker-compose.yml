@@ -1,0 +1,21 @@
+version: '2'
+services:
+  ubuntu16.04-yocto-wangzy:
+    build: .
+    image: ubuntu16.04-yocto-wangzy
+    container_name: bitbake-environment-container-wangzy
+    restart: unless-stopped
+    volumes:
+      - "/etc/timezone:/etc/timezone"
+      - "/etc/localtime:/etc/localtime"
+      - "./workspace:/home/wangzy/workspace"
+    command:
+      - /bin/bash
+    cap_add:
+      - SYS_ADMIN
+    security_opt:
+      - apparmor:unconfined
+    user: wangzy
+    stdin_open: true
+    tty: true
+

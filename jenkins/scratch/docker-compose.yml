@@ -1,0 +1,7 @@
+version: '2'
+services:
+    jenkins:
+        build: .
+        image: scratch_jenkins
+        container_name: jenkins-container
+        user: root

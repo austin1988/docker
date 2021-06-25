@@ -1,0 +1,9 @@
+version: '2'
+services:
+    excalidraw:
+        image: excalidraw/excalidraw
+        container_name: excalidraw
+        restart: unless-stopped
+        ports:
+            - "9181:80"
+
