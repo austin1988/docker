@@ -1,0 +1,9 @@
+version: '2'
+services:
+  ubuntu20.04:
+    build: .
+    image: ubuntu20.04-stm32
+    container_name: ubuntu20.04-stm32-container
+    user: root
+    tty: true
+

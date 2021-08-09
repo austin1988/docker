@@ -1,0 +1,15 @@
+version: '2'
+services:
+    jenkins:
+        image: scratch_jenkins:latest
+        container_name: jenkins-build-container
+        restart: unless-stopped
+        ports:
+            - "5001:5000"
+            - "9091:8080"
+        volumes:
+            - "/data/docker_jenkins_home/build_projects:/var/jenkins_home"
+            - "/data/docker_oecore-x86_64:/usr/local/oecore-x86_64"
+            - "/data/docker_poky_vs31:/poky"
+            - "/data/docker_qt_vs31:/home/linux/Vkang"
+        user: jenkins

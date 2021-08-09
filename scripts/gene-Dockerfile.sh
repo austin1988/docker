@@ -16,6 +16,7 @@ else
     exit 1
 fi
 
+# failed
 if [ -f /usr/share/zoneinfo/Asia/Shanghai ]; then
 SET_TIMEZONE="
 ENV TimeZone=Asia/Shanghai
@@ -27,13 +28,12 @@ cat << EOF
 FROM $image_name
 
 USER root
+
 # add user
 RUN groupadd -g $current_group_id $current_group \\
  && useradd -u $current_user_id -g $current_group -m -d /home/$current_user --shell /bin/bash -p $current_user $current_user
 
 USER $current_user
 WORKDIR /home/$current_user/workspace
-# because /data/arm-gcc-8.2.0 is not exist, so below is invalid
-#RUN ["sh", "-c", ".", "/data/arm-gcc-8.2.0/environment-setup-armv7at2hf-neon-tdx-linux-gnueabi"]
 
 EOF

@@ -1,0 +1,12 @@
+version: '2'
+services:
+    jenkins:
+        image: medcaptain_jenkins:1.2
+        container_name: jenkins-stm32cubeide-container
+        restart: unless-stopped
+        ports:
+            - "5003:5000"
+            - "9093:8080"
+        volumes:
+            - "/data/docker_jenkins_home/cubeide_projects:/var/jenkins_home"
+        user: jenkins

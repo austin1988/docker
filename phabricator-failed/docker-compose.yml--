@@ -1,0 +1,25 @@
+version: '2'
+services:
+  mariadb:
+    image: 'docker.io/bitnami/mariadb:10.3-debian-10'
+    environment:
+      - ALLOW_EMPTY_PASSWORD=yes
+      - MARIADB_EXTRA_FLAGS=--local-infile=0
+    volumes:
+      - '/home/wangzy/work/medcaptain/docker/phabricator/mariadb_data:/bitnami'
+  phabricator:
+    image: 'docker.io/bitnami/phabricator:2020-debian-10'
+    ports:
+      - '8091:80'
+      - '443:443'
+    volumes:
+      - '/home/wangzy/work/medcaptain/docker/phabricator/phabricator_data:/bitnami'
+      - '/home/wangzy/work/medcaptain/docker/phabricator/my_vhost.conf:/opt/bitnami/apache/conf/vhosts/my_vhost.conf'
+    environment:
+      - PHABRICATOR_PASSWORD=@123456a
+    depends_on:
+      - mariadb
+
+volumes:
+  mariadb_data: {}
+  phabricator_data: {}

@@ -69,7 +69,7 @@ elif [ "$ACTION" = "in" ];then
     cd $PROJECT_DIR 
     if [ "$CONTAINER_NAME" = "ramdisk" ] \
     || [ "$CONTAINER_NAME" = "arm-gcc5" ];then
-        ./set-env.sh ubuntu18.04:1.1
+        ./set-env.sh ubuntu18.04-yocto:1.0
     elif [ "$CONTAINER_NAME" = "toradexBSP3.0" ] \
     || [ "$CONTAINER_NAME" = "bitbake" ] \
     || [ "$CONTAINER_NAME" = "boot2qt" ] \

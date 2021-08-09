@@ -1,0 +1,26 @@
+#This compose file adds Draw.io https://draw.io to your stack
+version: '3.5'
+services:
+  drawio:
+    image: jgraph/drawio
+    container_name: drawio-new
+    restart: unless-stopped
+    ports:
+      - 19099:8080
+      - 18443:8443
+    volumes:
+      - ./docker-entrypoint.sh:/docker-entrypoint.sh
+    environment:
+      PUBLIC_DNS: domain
+      ORGANISATION_UNIT: unit
+      ORGANISATION: org
+      CITY: city
+      STATE: state
+      COUNTRY_CODE: country
+      DRAWIO_SELF_CONTAINED: "yes"
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://domain:9090 || exit 1"]
+      interval: 1m30s
+      timeout: 10s
+      retries: 5
+

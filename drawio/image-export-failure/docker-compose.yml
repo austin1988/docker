@@ -1,0 +1,28 @@
+#This compose file adds Draw.io https://draw.io to your stack
+version: '3.5'
+services:
+  image-export:
+    image: jgraph/export-server
+    expose: 
+      - "8000"
+    networks: 
+      - drawionet
+    expose: 
+      - "8000"
+  drawio:
+    image: jgraph/drawio
+    container_name: drawio-new
+    ports:
+      - 19099:8080
+      - 18443:8443
+    volumes:
+      - ./docker-entrypoint.sh:/docker-entrypoint.sh
+    depends_on:
+      - image-export
+    networks: 
+      - drawionet
+    environment:
+      DRAWIO_SELF_CONTAINED: "yes"
+
+networks: 
+  drawionet:

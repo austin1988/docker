@@ -1,8 +1,8 @@
 version: '2'
 services:
-  ubuntu18.04-wangzy:
+  ubuntu18.04-yocto-wangzy:
     build: .
-    image: ubuntu18.04-wangzy
+    image: ubuntu18.04-yocto-wangzy
     container_name: gcc5.2.1-container-wangzy
     restart: unless-stopped
     volumes:

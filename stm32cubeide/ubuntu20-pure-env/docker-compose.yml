@@ -1,0 +1,11 @@
+version: '2'
+services:
+    jenkins:
+        image: ubuntu20.04-stm32:1.0
+        container_name: stm32cubeide
+        volumes:
+            - "/data/docker_jenkins_home/cubeide_projects:/var/jenkins_home"
+        command: "/bin/bash"
+        user: root
+        stdin_open: true
+        tty: true

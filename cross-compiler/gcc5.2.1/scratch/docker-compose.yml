@@ -2,7 +2,7 @@ version: '2'
 services:
   ubuntu18.04:
     build: .
-    image: ubuntu18.04
+    image: ubuntu18.04-yocto
     container_name: ubuntu18.04-container
     user: root
     tty: true

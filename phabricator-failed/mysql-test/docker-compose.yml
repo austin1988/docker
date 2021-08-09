@@ -1,0 +1,42 @@
+version: '2'
+services:
+  phabricator:
+    image: 'docker.io/bitnami/phabricator:2020-debian-10'
+    ports:
+      - '8091:80'
+      - '443:443'
+      - '2222:22'
+    environment:
+      - MYSQL_HOST=mysql-db
+      - MYSQL_USER=phabricator
+      - MYSQL_PASS=phabricator
+      - PHABRICATOR_REPOSITORY_PATH=/repos
+    volumes:
+      - '/home/wangzy/work/docker/phabricator/phabricator_data:/bitnami'
+      - '/home/wangzy/work/docker/phabricator/my_vhost.conf:/opt/bitnami/apache/conf/vhosts/my_vhost.conf'
+    depends_on:
+      - db
+    networks:
+      - bridge
+  db:
+    image: "mysql:5.7"
+    container_name: mysql-db
+    volumes:
+      - ./phabricator.cnf:/etc/mysql/conf.d/phabricator.cnf
+      - mysql-data:/var/lib/mysql
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+    environment:
+      - MYSQL_ROOT_PASSWORD=phabricator
+      - MYSQL_USER=phabricator
+      - MYSQL_PASSWORD=phabricator
+      - MYSQL_DATABASE=phabricator
+    networks:
+      - bridge
+
+networks:
+  bridge:
+    driver: bridge
+
+volumes:
+  mysql-data: {}
+  phabricator_data: {}

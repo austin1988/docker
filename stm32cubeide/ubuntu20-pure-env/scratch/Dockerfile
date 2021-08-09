@@ -1,4 +1,4 @@
-FROM ubuntu:18.04
+FROM ubuntu:20.04
 
 ARG KERNEL_DEPS_DEBIAN_INSTALL="\
 libncurses5-dev \
@@ -22,7 +22,6 @@ texinfo \
 libsdl1.2-dev \
 gcc \
 g++ \
-bc \
 file \
 cpio \
 "
@@ -36,13 +35,18 @@ rsync \
 cpio \
 "
 
+ARG STM32CUBEIDE_DEPS_DEBIAN_INSTALL="\
+locales \
+libncurses5-dev \
+python \
+"
+
 USER root
 
-RUN cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
-RUN apt-get -y update && apt-get install -y --no-install-recommends \
-    $YOCTO_DEPS_DEBIAN_INSTALL \
-    && apt-get clean && apt-get autoremove && rm -rf /var/lib/apt/lists/*
+#RUN apt-get -y update && apt-get install -y --no-install-recommends \
+#    $YOCTO_DEPS_DEBIAN_INSTALL \
+#    && apt-get clean && apt-get autoremove && rm -rf /var/lib/apt/lists/*
 
 # depend on locales component
-RUN locale-gen en_US.UTF-8
+#RUN locale-gen en_US.UTF-8
 

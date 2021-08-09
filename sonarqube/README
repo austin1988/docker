@@ -1,0 +1,30 @@
+1. sonarcube部署流程：
+(1) run sonar in docker 
+(2) login in
+(3) generate token
+user: austin
+token: 1e3109f2795885dd70d1c2c65472fc7a73d0b693
+
+sonar-scanner \
+  -Dsonar.projectKey=first-test \
+  -Dsonar.sources=. \
+  -Dsonar.host.url=http://10.10.1.101:19099 \
+  -Dsonar.login=1e3109f2795885dd70d1c2c65472fc7a73d0b693
+  
+reference:
+https://www.cnblogs.com/longronglang/p/12845654.html
+https://docs.sonarqube.org/latest/analysis/scan/sonarscanner/
+
+
+2. plugins install
+(1) 下载插件并将其拷贝进容器
+docker cp checkstyle-sonar-plugin-8.40.jar sonarqube_sonarqube_1:/opt/sonarqube/extensions/plugins
+(2) restart service 
+operate in web gui
+Administration--> System--> Restart Server
+
+newest Checkstyle plugin checkstyle-sonar-plugin-8.40.jar requres SonarQube 7.9 version 以上版本
+ERROR web[][o.s.s.p.Platform] Web server startup failed: Plugin Checkstyle [checkstyle] requires at least SonarQube 7.9
+4.35版本的checkstyle也需要7.9以上
+
+
